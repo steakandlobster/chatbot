@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat with My Assistant</title>
+    <style>
+        #chatBox {
+            border: 1px solid #000;
+            padding: 10px;
+            height: 300px;
+            overflow: auto;
+        }
+        #userInput {
+            width: 80%;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="chatBox">
+        <!-- Messages will appear here -->
+    </div>
+    <input type="text" id="userInput" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById('userInput').value;
+            document.getElementById('userInput').value = '';
+
+            // Display the user's message in the chatBox
+            var chatBox = document.getElementById('chatBox');
+            chatBox.innerHTML += '<div>User: ' + userInput + '</div>';
+
+            // Placeholder for sending the message to OpenAI
+            // This will be implemented later
+        }
+
+        function displayResponse(message) {
+            var chatBox = document.getElementById('chatBox');
+            chatBox.innerHTML += '<div>Assistant: ' + message + '</div>';
+        }
+    </script>
+</body>
+</html>
